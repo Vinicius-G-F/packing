@@ -67,7 +67,6 @@ function updateItem(e) {
     machine.materiais.forEach((material1, i1) => {
         machine.materiais.forEach((material2, i2) => {
             if (material1.nome == material2.nome && i1 != i2) {
-                console.log(material1.nome, material2.nome)
                 hasDuplicateItem = true
                 return
             }
@@ -214,17 +213,20 @@ function cardHTML(name, materials, color, index, category) {
     materials.forEach(material => {
         materialsHTML += `<span>${material.nome}: ${material['part number']}</span>`
     })
+
+    const indexOriginal = dataBank[category].findIndex(item=>item.nome==name)
+
     return `<div class="card card--${color}">
         <h3>${name}</h3>
         <div class="card-info">
           ${materialsHTML}
         </div>
         <div class="card-buttons">
-          <button class="card-button card-button--edit" onclick="sendMachineIndexAndCategory('${index}', '${category}'); showModalEdit('${color}');"></button>
-          <button class="card-button card-button--delete" onclick="showModalDelete(); sendMachineIndexAndCategory('${index}', '${category}');"></button>
+          <button class="card-button card-button--edit" onclick="sendMachineIndexAndCategory('${indexOriginal}', '${category}'); showModalEdit('${color}');"></button>
+          <button class="card-button card-button--delete" onclick="showModalDelete(); sendMachineIndexAndCategory('${indexOriginal}', '${category}');"></button>
         </div>
-        <button type="button" class="chevrons-left" onclick="shiftCards('${index}', '${category}', '-1')"></button>
-        <button type="button" class="chevrons-right" onclick="shiftCards('${index}', '${category}', '+1')"></button>
+        <button type="button" class="chevrons-left" onclick="shiftCards('${indexOriginal}', '${category}', '-1')"></button>
+        <button type="button" class="chevrons-right" onclick="shiftCards('${indexOriginal}', '${category}', '+1')"></button>
       </div>`
 }
 
@@ -511,7 +513,6 @@ const search = document.getElementById('search')
 search.addEventListener("input", function () {
     if (this.value == '') {
         render(dataBank)
-        console.log("renderizar")
         return
     }
     const searchItem = this.value.toLowerCase()
