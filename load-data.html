@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/load-data.css">
+  <title>Data Load</title>
+</head>
+
+<body>
+  <div>
+    <button id="download" onclick="downloadLocalStorage()">Download</button>
+    <input type="file" id="upload" accept="application/json">
+  </div>
+  <script>
+    document.getElementById("upload").addEventListener("change", function(e) {
+      uploadLocalStorage(e.target.files[0]);
+    });
+  </script>
+</body>
+<script src="./scripts/loadData.js"></script>
+</html>

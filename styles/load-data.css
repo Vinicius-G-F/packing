@@ -1,0 +1,27 @@
+div{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+#download, #upload {
+    padding: 8px 18px;
+    font-size: 32px;
+    font-weight: bolder;
+    border-radius: 4px;
+    cursor: pointer;
+    color: rgb(21, 0, 22);
+    border: white solid 3px;
+}
+
+#download {
+    border-color: darkturquoise;
+}
+
+#upload{
+    border-color: burlywood;
+    width: 225px;
+}

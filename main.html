@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./styles/style.css">
+  <title>Packing</title>
+</head>
+
+<body>
+  <h1>
+    Materiais do packing
+  </h1>
+  <label for="search" class="search-label">Pesquisar por nome ou por part number</label>
+  <div class="search-field">
+    <input type="text" id="search">
+    <img src="./icons/magnifier.svg" alt="lupa" class="magnifier">
+  </div>
+  <section class="materiais-desks-notebooks" id="note-desk-section">
+    <div class="titulo-secao">
+      <h2>Materiais de Desks e Notebooks</h2>
+      <button class="button-add button-add--green" onclick="showModalAdd('green'); sendToURLCategory('notebooks-desktops')">Adicionar <span class="plus">+</span></button>
+    </div>
+    <div class="divider"></div>
+    <div class="cards-container" id="cards-notebooks-desks">
+    </div>
+  </section>
+  <section class="materiais-servidores" id="server-section">
+    <div class="titulo-secao">
+      <h2>Materiais de Servidores</h2>
+      <button class="button-add button-add--blue" onclick="showModalAdd('blue'); sendToURLCategory('servidores')">Adicionar <span class="plus">+</span></button>
+    </div>
+    <div class="divider"></div>
+    <div class="cards-container" id="cards-servidores">
+    </div>
+  </section>
+  <section class="materiais-pre-kitting" id="preKitting-section">
+    <div class="titulo-secao">
+      <h2>Materiais de Pré-kitting</h2>
+      <button class="button-add button-add--red" onclick="showModalAdd('red'); sendToURLCategory('pré-kitting')">Adicionar <span class="plus">+</span></button>
+    </div>
+    <div class="divider"></div>
+    <div class="cards-container" id="cards-pre-kitting">
+    </div>
+  </section>
+
+
+  <dialog id="modal-delete">
+    <div class="modal-delete-texto">
+      <p>Tem certeza de que dezeja excluir esse item?</p>
+    </div>
+    <div>
+      <button class="modal-delete-button" onclick="deleteItem()">SIM</button>
+      <button class="modal-delete-button" onclick="closeModalDelete()">NÃO</button>
+    </div>
+  </dialog>
+
+  <dialog id="modal-edit" class="modal-form">
+    <div class="modal-texto">
+      <p>Editar item:</p>
+    </div>
+    <form onsubmit="updateItem(event)">
+      <div>
+        <label for="name-edit">Nome:</label>
+        <input type="text" id="name-edit" class="form-input" required>
+      </div>
+      <div id="materials-edit">
+      </div>
+      <div class="form-buttons">
+        <button type="button" class="button-form button-form-plus" onclick="materialsADDEdit()">+</button>
+        <button type="button" class="button-form" onclick="mostComumMaterialsEdit(this)" id="add-button-comum-edit">Adicionar os materiais mais comuns</button>
+      </div>
+      <div class="modal-buttons">
+        <button class="modal-delete-button" type="submit">Salvar</button>
+        <button type="button" class="modal-delete-button" onclick="closeModalEdit()">Cancelar</button>
+      </div>
+    </form>
+  </dialog>
+
+
+  <dialog id="modal-add" class="modal-form">
+    <div class="modal-texto">
+      <p>Adicionar item:</p>
+    </div>
+    <form onsubmit="addMachine(event)">
+      <div>
+        <label for="name">Nome:</label>
+        <input type="text" id="name" class="form-input" required>
+      </div>
+      <div  id="materials-adding">
+
+      </div>
+      <div class="form-buttons">
+        <button type="button" class="button-form button-form-plus" onclick="materialsADD()">+</button>
+        <button type="button" class="button-form" onclick="mostComumMaterials(this)" id="add-button-comum">Adicionar os materiais mais comuns</button>
+      </div>
+      <div class="modal-buttons">
+        <button class="modal-delete-button" type="submit">Salvar</button>
+        <button type="button" class="modal-delete-button" onclick="closeModalAdd()">Cancelar</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+<script src="./scripts/script.js"></script>
+</html>

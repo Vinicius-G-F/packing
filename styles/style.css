@@ -1,0 +1,264 @@
+:root{
+  --border-modal-color: white;
+  --background-modal: white;
+  --color-modal: white;
+}
+
+html{
+  background-color: rgb(21, 0, 22);
+  color: white;
+}
+
+h1{
+  text-align: center;
+  margin-bottom: 24px;
+}
+.search-label{
+  margin-left: 48px;
+  display: block;
+}
+.search-field {
+  margin-left: 48px;
+  margin-bottom: 32px;
+  position: relative;
+  display: inline-block;
+}
+#search{
+  width: 255px;
+}
+.magnifier {
+  position: absolute;
+  top: 1px;
+  right: 4px;
+  pointer-events: none;
+}
+
+section{
+  margin-left: 48px;
+}
+.titulo-secao{
+  display: flex;
+  gap: 28px;
+}
+.button-add{
+  background-color: transparent;
+  cursor: pointer;
+  color: white;
+  border: none;
+  padding: 2px 20px;
+  border-radius: 999px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.button-add:hover{
+  scale: 1.02;
+  transition: 0.6s;
+}
+.button-add--green{
+  color: rgb(156, 247, 156);
+  border: rgb(0, 57, 11) solid 2px;
+  background-color: rgb(0, 9, 2);
+}
+.button-add--green:hover{
+  color: rgb(74, 241, 74);
+  border-color: rgb(1, 109, 22);
+  background-color: rgb(0, 21, 5);
+}
+.button-add--blue{
+  color: rgb(148, 143, 245);
+  border: rgb(2, 4, 110) solid 2px;
+  background-color: rgb(3, 0, 19);
+}
+.button-add--blue:hover{
+  color: rgb(121, 115, 246);
+  border-color: rgb(37, 4, 145);
+  background-color: rgb(10, 4, 55);
+}
+.button-add--red{
+  color: rgb(248, 128, 128);
+  border: rgb(174, 8, 8) solid 2px;
+  background-color: rgb(19, 0, 0);
+}
+.button-add--red:hover{
+  color: rgb(248, 65, 65);
+  border-color: rgb(162, 3, 3);
+  background-color: rgb(21, 0, 0);
+}
+
+
+.plus{
+  font-weight: 700;
+  font-size: 24px;
+}
+.divider {
+  margin-top: 4px;
+  width: 480px;
+  border: rgba(170, 0, 144, 0.222) solid 1px;
+}
+.cards-container{
+  display: flex;
+  gap: 30px;
+  padding-top: 32px;
+  flex-wrap: wrap;
+}
+.card{
+  width: 220px;
+  height: fit-content;
+  border-radius: 12px;
+  padding: 28px;
+  position: relative;
+}
+.card.dragging {
+  opacity: 0.5;
+}
+.card--green {
+  border: rgb(43, 226, 76) solid 3px;
+  background-color: rgb(0, 57, 11);
+}
+.card--blue {
+  border: rgb(74, 79, 238) solid 3px;
+  background-color: rgb(0, 12, 57);
+}
+.card--red {
+  border: rgb(204, 69, 69) solid 3px;
+  background-color: rgb(38, 5, 5);
+}
+.card-buttons{
+  position: absolute;
+  top: 0%;
+  left: 74%;
+  display: flex;
+}
+.card-button{
+  background-color: transparent;
+  font-weight: bolder;
+  border-radius: 100%;
+  width: 28px;
+  height: 28px;
+  filter: invert();
+  cursor: pointer;
+}
+.card-button--edit{
+  background: url('../icons/pencil.svg');
+  background-position-x: 3.5px;
+}
+.card-button--delete{
+  background: url('../icons/trash.svg');
+}
+.chevrons-left, .chevrons-right{
+  cursor: pointer;
+  position: absolute;
+  width:30px;
+  height: 30px;
+  border: none;
+  filter: invert();
+  background-color: transparent;
+  background-position: center;
+  background-size: 40px;
+  top: 45%;
+}
+.chevrons-right{
+  background-image: url(../icons/right-chevrons.svg);
+  background-color: transparent;
+  right: -10%;
+}
+.chevrons-left{
+  background-image: url(../icons/left-chevrons.svg);
+  left: -10%;
+}
+.card-info{
+  display: flex;
+  flex-direction: column;
+}
+
+h3 {
+  text-align: center;
+}
+.materiais-servidores, .materiais-pre-kitting{
+  margin-top: 32px;
+}
+
+.materiais-pre-kitting {
+  margin-bottom: 32px;
+}
+
+dialog {
+  margin: auto;
+  text-align: center;
+  background-color: rebeccapurple;
+  color: white;
+}
+
+.modal-form{
+  border-color: var(--border-modal-color);
+  background-color: var(--background-modal);
+}
+
+.modal-texto{
+  margin-bottom: 32px;
+  font-size: 22px;
+  font-weight: bolder;
+}
+.modal-delete-button{
+  border: none;
+  background-color: indigo;
+  color: white;
+  font-size: 18px;
+  font-weight: bolder;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 4px 12px;
+}
+
+.modal-buttons{
+  margin-top: 16px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 4px;
+  align-items: center;
+}
+
+.delete-add-field{
+  background: url('../icons/trash.svg');
+  filter: invert(1);
+  border: none;
+  width: 22px;
+  height: 23px;
+  cursor: pointer;
+}
+.adding-fields{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-input{
+  width: 300px;
+  margin-left: 8px;
+}
+.plus-form{
+  font-size: 26px;
+  font-weight: bolder;
+  margin: 0 14px;
+}
+.button-form{
+  width: fit-content;
+  border: var(--border-modal-color) solid 2px;
+  color: var(--color-modal);
+  border-radius: 6px;
+  font-weight: bolder;
+  padding: 0 14px;
+  cursor: pointer;
+}
+.button-form-plus{
+  font-size: 26px;
+}
+.form-buttons{
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
