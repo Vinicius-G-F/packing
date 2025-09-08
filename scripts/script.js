@@ -88,6 +88,9 @@ function updateItem(e) {
 
 // mudar os cards de posição
 function shiftCards(index, category, direction){
+    if(dataBank[category].length <= 1){
+        return
+    }
     let sideCard = null
     direction = parseInt(direction)
     index = parseInt(index)
